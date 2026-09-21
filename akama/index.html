@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿卡玛-魔兽世界萨满祭司攻略与职业指南</title>
+    <meta name="description" content="阿卡玛魔兽世界攻略站，提供萨满祭司职业技能详解、天赋加点、属性优先级、装备获取及阿卡玛剧情背景深度解析。">
+    <meta name="keywords" content="阿卡玛,魔兽世界,萨满祭司,部落,奥格瑞玛,攻略,天赋,装备">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff9900; /* 萨满火元素色 */
+            --secondary-color: #00aaff; /* 萨满水元素色 */
+            --bg-dark: #1a1a1a;
+            --bg-card: #2a2a2a;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #444;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-unit);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: var(--text-muted);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .header-actions button {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 6px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .header-actions button:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/wowshaman/1600/600') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #000;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #ffb84d;
+            transform: translateY(-2px);
+        }
+
+        /* Attributes Grid */
+        .attributes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .attr-card {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .attr-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .attr-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Builds Section */
+        .builds-section {
+            padding: 40px 0;
+        }
+
+        .builds-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .build-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .build-header {
+            background-color: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .build-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .build-badge {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: #444;
+            color: #fff;
+        }
+
+        .build-content {
+            padding: 20px;
+        }
+
+        .talent-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .talent-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .talent-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #444;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .talent-info {
+            flex: 1;
+        }
+
+        .talent-name {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .talent-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .talent-points {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Lore Section */
+        .lore-section {
+            padding: 40px 0;
+            background-color: #252525;
+        }
+
+        .lore-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .lore-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .lore-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .lore-image {
+            position: relative;
+        }
+
+        .lore-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            filter: grayscale(20%);
+        }
+
+        /* Latest News */
+        .news-section {
+            padding: 40px 0;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .news-item {
+            display: flex;
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .news-item:hover {
+            border-left-color: var(--secondary-color);
+        }
+
+        .news-date {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 70px;
+            margin-right: 20px;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .news-date .month {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .news-details h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .news-details p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .builds-container, .lore-content {
+                grid-template-columns: 1fr;
+            }
+
+            .news-item {
+                flex-direction: column;
+            }
+
+            .news-date {
+                margin-right: 0;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .news-date .day, .news-date .month {
+                display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>阿卡玛</span>攻略站
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#builds">天赋构建</a></li>
+                <li><a href="#lore">背景故事</a></li>
+                <li><a href="#news">最新资讯</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button>登录 / 注册</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>萨满祭司的崛起与阿卡玛的指引</h1>
+            <p>探索元素的力量，掌握治疗与毁灭的平衡。这里是您了解阿卡玛、部落萨满祭司职业指南与最新版本解析的权威平台。</p>
+            <a href="#builds" class="cta-button">查看最新天赋加点</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Attributes Overview -->
+        <section class="attributes-grid">
+            <article class="attr-card">
+                <h3>智力 (INT)</h3>
+                <p>提升法术强度，是萨满法伤的核心属性。</p>
+            </article>
+            <article class="attr-card">
+                <h3>法力值 (MP)</h3>
+                <p>保证持续输出与治疗的能量源泉。</p>
+            </article>
+            <article class="attr-card">
+                <h3>急速 (SPD)</h3>
+                <p>减少施法时间，提升元素打击频率。</p>
+            </article>
+            <article class="attr-card">
+                <h3>暴击 (CRIT)</h3>
+                <p>增加造成重击的概率，触发额外效果。</p>
+            </article>
+        </section>
+
+        <!-- Builds Section -->
+        <section id="builds" class="builds-section">
+            <div class="section-title">
+                <h2>天赋构建指南</h2>
+                <span>当前版本 10.2.5</span>
+            </div>
+            
+            <div class="builds-container">
+                <!-- Fire Build -->
+                <article class="build-card">
+                    <div class="build-header">
+                        <h3>烈焰风暴 (输出向)</h3>
+                        <span class="build-badge">推荐</span>
+                    </div>
+                    <div class="build-content">
+                        <p style="margin-bottom: 15px; color: var(--text-muted);">专注于火焰系天赋，通过燃烧图腾与烈焰震击的组合，在短时间内造成高额爆发伤害。</p>
+                        <div class="talent-tree">
+                            <div class="talent-row">
+                                <div class="talent-icon" style="background: #ff4444;">🔥</div>
+                                <div class="talent-info">
+                                    <div class="talent-name">熔岩奔腾</div>
+                                    <div class="talent-desc">烈焰震击有几率使你的下一次火焰箭或火球术施法时间减少 20%。</div>
+                                </div>
+                                <div class="talent-points">5/5</div>
+                            </div>
+                            <div class="talent-row">
+                                <div class="talent-icon" style="background: #ff4444;">🔥</div>
+                                <div class="talent-info">
+                                    <div class="talent-name">烈焰地带</div>
+                                    <div class="talent-desc">你的火焰系法术会使目标脚下产生一片火焰地带，每秒造成火焰伤害。</div>
+                                </div>
+                                <div class="talent-points">3/3</div>
+                            </div>
+                            <div class="talent-row">
+                                <div class="talent-icon" style="background: #ff4444;">🔥</div>
+                                <div class="talent-info">
+                                    <div class="talent-name">过载</div>
+                                    <div class="talent-desc">你的火焰法术有几率产生一个过载的火焰图腾，产生爆炸并造成伤害。</div>
+                                </div>
+                                <div class="talent-points">2/2</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Healing Build -->
+                <article class="build-card">
+                    <div class="build-header">
+                        <h3>大地之灵 (治疗向)</h3>
+                        <span class="build-badge">PVE</span>
+                    </div>
+                    <div class="build-content">
+                        <p style="margin-bottom: 15px; color: var(--text-muted);">侧重于恢复与治疗链，通过增强图腾和大地之盾，为团队提供持续且稳定的生命恢复。</p>
+                        <div class="talent-tree">
+                            <div class="talent-row">
+                                <div class="talent-icon" style="background: #44ff44;">🌿</div>
+                                <div class="talent-info">
+                                    <div class="talent-name">强化恢复</div>
+                                    <div class="talent-desc">恢复法术的治疗量提高 15%，并且有几率使目标获得一个持续 10 秒的减益效果。</div>
+                                </div>
+                                <div class="talent-points">2/2</div>
+                            </div>
+                            <div class="talent-row">
+                                <div class="talent-icon" style="background: #44ff44;">🌿</div>
+                                <div class="talent-info">
+                                    <div class="talent-name">自然之魂</div>
+                                    <div class="talent-desc">你的治疗链法术有几率使目标获得自然之魂效果，增加治疗效果。</div>
+                                </div>
+                                <div class="talent-points">1/1</div>
+                            </div>
+                            <div class="talent-row">
+                                <div class="talent-icon" style="background: #44ff44;">🌿</div>
+                                <div class="talent-info">
+                                    <div class="talent-name">强化图腾</div>
+                                    <div class="talent-desc">所有图腾的持续时间增加 30%。</div>
+                                </div>
+                                <div class="talent-points">5/5</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Lore Section -->
+        <section id="lore" class="lore-section">
+            <div class="section-title">
+                <h2>阿卡玛的传说</h2>
+                <span>部落的历史与荣耀</span>
+            </div>
+            <div class="lore-content">
+                <div class="lore-image">
+                    <img src="https://picsum.photos/seed/akama/600/400" alt="阿卡玛雕像">
+                </div>
+                <div class="lore-text">
+                    <h3>暗影议会的叛徒</h3>
+                    <p>阿卡玛曾是暗影议会的领袖，曾一度被伊利丹·怒风的精神控制。在黑暗之门的开启后，他利用伊利丹对他的信任，潜伏在黑暗神殿之中，策划着推翻伊利丹暴政的计划。</p>
+                    <h3>荣耀回归</h3>
+                    <p>当联盟与部落的英雄们攻入黑暗神殿时，阿卡玛终于摆脱了伊利丹的精神枷锁。他与玩家并肩作战，成为了终结伊利丹统治的关键力量。他的故事象征着自由意志与不屈的意志。</p>
+                    <p>如今，阿卡玛依然是奥格瑞玛的守护者之一，他的智慧与经验指引着年轻的萨满祭司们，教导他们如何驾驭元素，如何为部落而战。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news-section">
+            <div class="section-title">
+                <h2>最新资讯与动态</h2>
+                <span>关注版本更新与补丁说明</span>
+            </div>
+            <div class="news-list">
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">15</span>
+                        <span class="month">10月</span>
+                    </div>
+                    <div class="news-details">
+                        <h4><a href="#">10.2.5版本萨满祭司数值调整公告</a></h4>
+                        <p>关于火焰新星图腾伤害上限的修正以及治疗链法术的冷却时间优化说明。</p>
+                    </div>
+                </article>
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">08</span>
+                        <span class="month">10月</span>
+                    </div>
+                    <div class="news-details">
+                        <h4><a href="#">奥格瑞玛萨满祭司训练师位置更新</a></h4>
+                        <p>随着城市扩建，新的元素训练师位置已更新，请前往萨尔之厅寻找阿卡玛。</p>
+                    </div>
+                </article>
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">02</span>
+                        <span class="month">10月</span>
+                    </div>
+                    <div class="news-details">
+                        <h4><a href="#">阿卡玛的试炼：史诗地下城攻略</a></h4>
+                        <p>深入解析黑暗神殿副本的机制，以及如何利用萨满的图腾控制全场节奏。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于阿卡玛</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">联系管理员</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>职业指南</h4>
+                <ul>
+                    <li><a href="#">萨满祭司</a></li>
+                    <li><a href="#">牧师</a></li>
+                    <li><a href="#">术士</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源下载</h4>
+                <ul>
+                    <li><a href="#">天赋模拟器</a></li>
+                    <li><a href="#">副本地图</a></li>
+                    <li><a href="#">宏命令库</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="color: #888; font-size: 0.9rem;">获取最新的游戏资讯与攻略推送。</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 阿卡玛攻略站. All rights reserved. 本站为粉丝制作，非暴雪娱乐官方页面。</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+          </html>
