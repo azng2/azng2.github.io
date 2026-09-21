@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝书网 - 随时随地免费阅读海量网络小说</title>
+    <meta name="description" content="宝书网提供最新热门的玄幻、言情、都市、历史等小说在线阅读服务，支持手机、电脑多端访问，更新速度快，无广告干扰，打造极致的沉浸式阅读体验。">
+    <meta name="keywords" content="宝书网,网络小说,在线阅读,免费小说,玄幻小说,小说推荐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d35400;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        .main-nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--accent-color);
+        }
+
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e67e22;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin-top: 16px;
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 24px;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Layout Grid */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        /* Section Styles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .more-link {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .more-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Book List */
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            border-color: var(--border-color);
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 12px;
+        }
+
+        .book-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .book-author {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .book-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .book-status {
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .status-update {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status-end {
+            background-color: #f5f5f5;
+            color: #757575;
+        }
+
+        .book-stats {
+            font-size: 11px;
+            color: #999;
+        }
+
+        /* Ranking Sidebar */
+        .ranking-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .ranking-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .rank-1 { background: #ffeb3b; color: #d35400; }
+        .rank-2 { background: #cfd8dc; color: #546e7a; }
+        .rank-3 { background: #ffcc80; color: #d35400; }
+        .rank-other { background: #eee; color: #999; }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .rank-title:hover {
+            color: var(--accent-color);
+        }
+
+        .rank-tags {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-card:hover {
+            border-color: var(--accent-color);
+            background-color: #fff8f5;
+        }
+
+        .category-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .category-name {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 48px 0 24px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+            }
+
+            .main-nav {
+                display: none; /* Simplified for mobile demo */
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-tags {
+                justify-content: center;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                宝书网<span>Book</span>
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">玄幻</a></li>
+                    <li><a href="#">言情</a></li>
+                    <li><a href="#">都市</a></li>
+                    <li><a href="#">历史</a></li>
+                    <li><a href="#">科幻</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" placeholder="搜索书名、作者、主角名...">
+                <button>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h2>每日更新，海量小说</h2>
+                    <p>宝书网为您精选全网最热门的免费小说资源，涵盖玄幻、言情、悬疑等全品类，给您极致的阅读享受。</p>
+                    <div class="hero-tags">
+                        <span class="tag">🔥 热门推荐</span>
+                        <span class="tag">⚡ 极速更新</span>
+                        <span class="tag">📱 适配手机</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/bookhero/400/300" alt="小说阅读体验">
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Categories -->
+            <section class="category-grid">
+                <div class="category-card">
+                    <span class="category-icon">🐉</span>
+                    <div class="category-name">玄幻修真</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">👸</span>
+                    <div class="category-name">古代言情</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🏙️</span>
+                    <div class="category-name">都市职场</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">📜</span>
+                    <div class="category-name">历史军事</div>
+                </div>
+            </section>
+
+            <!-- Main Layout -->
+            <div class="main-layout">
+                <!-- Left Content: Updates -->
+                <div class="content-left">
+                    <div class="section-header">
+                        <h3 class="section-title">最新更新</h3>
+                        <a href="#" class="more-link">更多 ></a>
+                    </div>
+
+                    <div class="book-list">
+                        <!-- Book Card 1 -->
+                        <article class="book-card">
+                            <div class="book-cover">
+                                <img src="https://picsum.photos/seed/novel1/200/300" alt="封面">
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">万古神帝：开局签到混沌珠</h4>
+                                <p class="book-author">作者：墨龙</p>
+                                <div class="book-meta">
+                                    <span class="book-status status-update">连载中</span>
+                                    <span class="book-stats">1.2万</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Book Card 2 -->
+                        <article class="book-card">
+                            <div class="book-cover">
+                                <img src="https://picsum.photos/seed/novel2/200/300" alt="封面">
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">重生之都市狂仙</h4>
+                                <p class="book-author">作者：逍遥书生</p>
+                                <div class="book-meta">
+                                    <span class="book-status status-update">连载中</span>
+                                    <span class="book-stats">8,920</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Book Card 3 -->
+                        <article class="book-card">
+                            <div class="book-cover">
+                                <img src="https://picsum.photos/seed/novel3/200/300" alt="封面">
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">绝世神医：腹黑大小姐</h4>
+                                <p class="book-author">作者：夜北</p>
+                                <div class="book-meta">
+                                    <span class="book-status status-update">连载中</span>
+                                    <span class="book-stats">5,600</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Book Card 4 -->
+                        <article class="book-card">
+                            <div class="book-cover">
+                                <img src="https://picsum.photos/seed/novel4/200/300" alt="封面">
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">大奉打更人</h4>
+                                <p class="book-author">作者：卖报小郎君</p>
+                                <div class="book-meta">
+                                    <span class="book-status status-update">连载中</span>
+                                    <span class="book-stats">2.5万</span>
+                                </div>
+                            </div>
+                        </article>
+
+                         <!-- Book Card 5 -->
+                         <article class="book-card">
+                            <div class="book-cover">
+                                <img src="https://picsum.photos/seed/novel5/200/300" alt="封面">
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">天道图书馆</h4>
+                                <p class="book-author">作者：会说话的肘子</p>
+                                <div class="book-meta">
+                                    <span class="book-status status-update">连载中</span>
+                                    <span class="book-stats">1.8万</span>
+                                </div>
+                            </div>
+                        </article>
+
+                         <!-- Book Card 6 -->
+                         <article class="book-card">
+                            <div class="book-cover">
+                                <img src="https://picsum.photos/seed/novel6/200/300" alt="封面">
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">蛊真人</h4>
+                                <p class="book-author">作者：蛊真人</p>
+                                <div class="book-meta">
+                                    <span class="book-status status-end">已完结</span>
+                                    <span class="book-stats">300万</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar: Rankings -->
+                <aside class="content-right">
+                    <div class="ranking-list">
+                        <div class="section-header">
+                            <h3 class="section-title">本周热榜</h3>
+                        </div>
+
+                        <div class="ranking-item">
+                            <div class="rank-num rank-1">1</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">圣墟</a>
+                                <div class="rank-tags">辰东 · 修真 · 逆天</div>
+                            </div>
+                        </div>
+
+                        <div class="ranking-item">
+                            <div class="rank-num rank-2">2</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">遮天</a>
+                                <div class="rank-tags">辰东 · 修真 · 神话</div>
+                            </div>
+                        </div>
+
+                        <div class="ranking-item">
+                            <div class="rank-num rank-3">3</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">完美世界</a>
+                                <div class="rank-tags">辰东 · 修真 · 史诗</div>
+                            </div>
+                        </div>
+
+                        <div class="ranking-item">
+                            <div class="rank-num rank-other">4</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">凡人修仙传</a>
+                                <div class="rank-tags">忘语 · 仙侠 · 经典</div>
+                            </div>
+                        </div>
+
+                        <div class="ranking-item">
+                            <div class="rank-num rank-other">5</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">修罗武神</a>
+                                <div class="rank-tags">星峰十年 · 热血</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ad Placeholder -->
+                    <div style="background:#eee; height:250px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#999; margin-top:24px;">
+                        广告位
+                    </div>
+                </aside>
+            </div>
+
+            <!-- New Recommendations -->
+            <div class="section-header">
+                <h3 class="section-title">编辑推荐</h3>
+            </div>
+            <div class="book-list">
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/rec1/200/300" alt="封面">
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">深空彼岸</h4>
+                        <p class="book-author">作者：辰东</p>
+                        <div class="book-meta">
+                            <span class="book-status status-update">连载中</span>
+                            <span class="book-stats">3.1万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/rec2/200/300" alt="封面">
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">道诡异仙</h4>
+                        <p class="book-author">作者：狐尾的笔</p>
+                        <div class="book-meta">
+                            <span class="book-status status-update">连载中</span>
+                            <span class="book-stats">4.5万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/rec3/200/300" alt="封面">
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">夜的命名术</h4>
+                        <p class="book-author">作者：会说话的肘子</p>
+                        <div class="book-meta">
+                            <span class="book-status status-update">连载中</span>
+                            <span class="book-stats">2.2万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/rec4/200/300" alt="封面">
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">诡秘之主</h4>
+                        <p class="book-author">作者：爱潜水的乌贼</p>
+                        <div class="book-meta">
+                            <span class="book-status status-end">已完结</span>
+                            <span class="book-stats">500万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/rec5/200/300" alt="封面">
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">大王饶命</h4>
+                        <p class="book-author">作者：会说话的肘子</p>
+                        <div class="book-meta">
+                            <span class="book-status status-end">已完结</span>
+                            <span class="book-stats">450万</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/rec6/200/300" alt="封面">
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">我师兄实在太稳健了</h4>
+                        <p class="book-author">作者：言归正传</p>
+                        <div class="book-meta">
+                            <span class="book-status status-end">已完结</span>
+                            <span class="book-stats">500万</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于宝书网</h4>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">排行榜</a></li>
+                        <li><a href="#">分类书库</a></li>
+                        <li><a href="#">书单推荐</a></li>
+                        <li><a href="#">投稿专区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">玄幻小说</a></li>
+                        <li><a href="#">都市小说</a></li>
+                        <li><a href="#">历史小说</a></li>
+                        <li><a href="#">科幻小说</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>客服邮箱：support@baoshuwang.com</li>
+                        <li>合作洽谈：bd@baoshuwang.com</li>
+                        <li>侵权举报：report@baoshuwang.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 宝书网 Baoshuwang. All Rights Reserved. 本站所有小说内容均来自互联网，仅供学习交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
