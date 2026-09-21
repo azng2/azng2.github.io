@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蛇床子百科：全面介绍蛇床子的药用价值、功效作用、禁忌人群、科学用法及选购指南。提供关于蛇床子温肾助阳、燥湿止痒的中医养生知识。">
+    <meta name="keywords" content="蛇床子,蛇床子功效,蛇床子作用,蛇床子禁忌,蛇床子用法,蛇床子选购">
+    <title>蛇床子-中药材功效作用、科学用法与选购指南</title>
+    <style>
+        :root {
+            --primary-color: #2d6a4f;
+            --secondary-color: #40916c;
+            --accent-color: #d8f3dc;
+            --text-main: #1b4332;
+            --text-secondary: #40513b;
+            --bg-body: #f4f7f4;
+            --bg-card: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin: 20px 0 10px;
+        }
+
+        .card p, .card li {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        /* Lists */
+        .benefit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Table Styles */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .data-table th, .data-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table th {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-main);
+            color: #ccc;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Utility */
+        .highlight {
+            background-color: rgba(255, 235, 59, 0.3);
+            padding: 0 4px;
+            border-radius: 2px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-title {
+            color: #856404;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <div class="logo-icon">🌿</div>
+                <span>本草识典</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#overview">概述</a></li>
+                    <li><a href="#benefits">功效</a></li>
+                    <li><a href="#usage">用法</a></li>
+                    <li><a href="#caution">禁忌</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>蛇床子</h1>
+            <p>伞形科植物蛇床的干燥成熟果实。中医里常用于温肾助阳、燥湿祛风、杀虫止痒，是妇科外用药的重要成分。</p>
+        </div>
+    </section>
+
+    <main class="container content-grid">
+        <!-- Left Column: Main Content -->
+        <article>
+            <!-- Overview -->
+            <section id="overview" class="card">
+                <h2>基本概述</h2>
+                <p><strong>蛇床子</strong>（学名：Cnidium monnieri (L.) Cuss.），又名蛇米、蛇粟、气果等，为伞形科植物蛇床的干燥成熟果实。蛇床子在我国分布广泛，主要产于东北、华北、西北及长江流域各省。</p>
+                <p>蛇床子入药历史悠久，最早见于《神农本草经》，被列为上品。其性温，味辛、苦，具有温肾助阳、燥湿祛风、杀虫止痒的功效。因其气味芳香，常被用作芳香化湿的药材。</p>
+                <h3>植物形态</h3>
+                <p>蛇床为一年生草本植物，高30-80厘米。茎直立，中空，有棱槽。叶为二回三出式羽状分裂，小叶边缘有细锯齿。复伞形花序顶生，花瓣白色。果实呈椭圆形，成熟时黄棕色。</p>
+            </section>
+
+            <!-- Benefits -->
+            <section id="benefits" class="card">
+                <h2>主要功效与作用</h2>
+                <p>蛇床子在临床应用中，尤其是外治方面效果显著。其主要药理作用包括抗菌、抗炎、抗过敏及增强免疫等。</p>
+                
+                <h3>1. 温肾助阳</h3>
+                <p>蛇床子入肾经，能振奋肾阳。常用于治疗肾阳不足引起的阳痿、宫冷、腰膝酸软等症状。在男科及妇科温补类方剂中较为常用。</p>
+
+                <h3>2. 燥湿祛风</h3>
+                <p>蛇床子气味芳香，能燥湿以祛风。对于湿疹、疥癣、阴痒等由湿热或风湿引起的皮肤病有较好的治疗作用。</p>
+
+                <h3>3. 杀虫止痒</h3>
+                <p>这是蛇床子最突出的功效之一。其挥发油成分对多种皮肤寄生虫有抑制作用，常用于治疗滴虫性阴道炎、外阴瘙痒症等。</p>
+
+                <h3>4. 抗菌与抗炎</h3>
+                <p>现代药理研究表明，蛇床子提取物对金黄色葡萄球菌、白色念珠菌等有不同程度的抑制作用，可用于辅助治疗皮肤感染。</p>
+            </section>
+
+            <!-- Usage & Preparation -->
+            <section id="usage" class="card">
+                <h2>科学用法与搭配</h2>
+                <p>蛇床子既可内服，更常用于外洗、坐浴或研末外敷。内服需严格遵医嘱，外用需注意浓度与皮肤敏感性。</p>
+
+                <h3>外用洗剂</h3>
+                <p><strong>蛇床子汤：</strong> 取蛇床子30克，加水煎煮30分钟，滤出药液，待温度适宜后清洗患处或坐浴。此法常用于阴部瘙痒、湿疹。</p>
+                
+                <h3>内服方剂</h3>
+                <p><strong>蛇床子散：</strong> 蛇床子、五味子、菟丝子、远志等份，为末，炼蜜为丸。用于肾虚阳痿、遗精。</p>
+
+                <h3>搭配建议</h3>
+                <ul class="benefit-list">
+                    <li><strong>配艾叶：</strong> 温经散寒，常用于外洗治疗阴寒腹痛。</li>
+                    <li><strong>配黄柏：</strong> 清热燥湿，增强抗炎止痒效果。</li>
+                    <li><strong>配雄黄：</strong> 增强杀虫解毒作用，用于疥癣顽疾。</li>
+                </ul>
+            </section>
+        </article>
+
+        <!-- Right Column: Sidebar -->
+        <aside>
+            <!-- Quick Tags -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">相关分类</div>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">妇科用药</a>
+                    <a href="#" class="tag">皮肤科</a>
+                    <a href="#" class="tag">外洗方</a>
+                    <a href="#" class="tag">温肾阳</a>
+                    <a href="#" class="tag">芳香化湿</a>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">药性速查</div>
+                <table class="data-table">
+                    <tr>
+                        <th>属性</th>
+                        <th>详情</th>
+                    </tr>
+                    <tr>
+                        <td>性味</td>
+                        <td>辛、苦，温</td>
+                    </tr>
+                    <tr>
+                        <td>归经</td>
+                        <td>肾经、脾经</td>
+                    </tr>
+                    <tr>
+                        <td>功效</td>
+                        <td>温肾助阳、燥湿、杀虫</td>
+                    </tr>
+                    <tr>
+                        <td>禁忌</td>
+                        <td>阴虚火旺者慎用</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- FAQ -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">常见问题 (FAQ)</div>
+                <div style="margin-bottom: 15px;">
+                    <p style="font-weight: bold; margin-bottom: 5px;">Q: 蛇床子可以长期泡脚吗？</p>
+                    <p style="font-size: 0.9rem;">A: 可以适量使用。蛇床子泡脚有助于温经散寒，改善手脚冰凉，但建议一周2-3次为宜，避免过度刺激皮肤。</p>
+                </div>
+                <div>
+                    <p style="font-weight: bold; margin-bottom: 5px;">Q: 孕妇可以使用含蛇床子的产品吗？</p>
+                    <p style="font-size: 0.9rem;">A: 一般不建议。蛇床子具有活血通经作用，且气味芳香，孕妇应避免使用，以免引起子宫收缩。</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Caution Section -->
+    <section id="caution" class="container">
+        <div class="card" style="border-left: 5px solid #e63946;">
+            <h2 style="color: #e63946; border-color: #e63946;">使用注意事项</h2>
+            <div class="warning-box">
+                <span class="warning-title">⚠️ 重要提示</span>
+                <p>1. <strong>阴虚火旺者慎用：</strong> 蛇床子性温，如果体内有实热或阴虚火旺（表现为口干舌燥、手足心热、盗汗），不宜单独使用，应在医生指导下配伍使用。</p>
+                <p>2. <strong>皮肤破损者禁用：</strong> 外用时，若患处皮肤有破损、溃烂或感染严重，应避免直接用药，以免加重感染。</p>
+                <p>3. <strong>过敏反应：</strong> 部分人群可能对蛇床子过敏，使用后若出现红肿、瘙痒加剧，应立即停用并用清水冲洗。</p>
+                <p>4. <strong>内服剂量：</strong> 内服剂量需严格控制，过量可能导致恶心、呕吐等胃肠道反应。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>本页面内容仅供科普参考，不作为医疗诊断依据。用药前请咨询专业中医师或医师。</p>
+            <p>&copy; 2023 蛇床子专题指南 | 本草识典</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
